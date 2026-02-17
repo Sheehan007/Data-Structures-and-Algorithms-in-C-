@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n;
+    string s;
+    if (!(cin >> n >> s)) return 0;
+
+    int zeros = 0, ones = 0;
+    for (char c : s) {
+        if (c == '0') zeros++;
+        else ones++;
+    }
+
+    if (zeros != ones) {
+        cout << 1 << "\n";
+        cout << s << endl;
+    } 
+    else {
+        cout << 2 << "\n";
+        cout << s[0] << " " << s.substr(1) << endl;
+    }
+
+    return 0;
+}
